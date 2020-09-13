@@ -14,7 +14,7 @@
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]--> 
+    <![endif]-->
 </head>
 
 <body style="background-color: #E9F5FD">
@@ -34,74 +34,35 @@
           <li>
             <a href="{{ url('/') }}">Home</a>
           </li>
-          <li><a href="{{ route('admin.Contact') }}">Contact me</a></li>
-
+          <li><a href="{{ url('/') }}">Contact me</a></li>
+          
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          @if (Auth::guest())
-          <li>
-            <a href="{{ url('/auth/login') }}">Login</a>
-          </li>
-          <li>
-            <a href="{{ url('/auth/register') }}">Register</a>
-          </li>
-          @else
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              @if (Auth::user()->can_post())
-              <li>
-                <a href="{{ url('/new-post') }}">Add new post</a>
-              </li>
-              <li>
-                <a href="{{ url('/user/'.Auth::id().'/posts') }}">My Posts</a>
-              </li>
-              @endif
-              <li>
-                <a href="{{ url('/user/'.Auth::id()) }}">My Profile</a>
-              </li>
-              <li>
-                <a href="{{ url('/logout') }}">Logout</a>
-              </li>
-            </ul>
-          </li>
-          @endif
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="container" style="background-color: #E9F5FD">
-    @if (Session::has('message'))
-    <div class="flash alert-info">
-      <p class="panel-body">
-        {{ Session::get('message') }}
-      </p>
-    </div>
-    @endif
-    @if ($errors->any())
-    <div class='flash alert-danger'>
-      <ul class="panel-body">
-        @foreach ( $errors->all() as $error )
-        <li>
-          {{ $error }}
-        </li>
-        @endforeach
-      </ul>
-    </div>
-    @endif
-    <div class="row">
+        
+        <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
           <div class="panel-heading" style="background-color: #C4E5FC">
-            <h2>@yield('title')</h2>
-            @yield('title-meta')
+            <h2>Contact Details</h2>
           </div>
           <div class="panel-body" style="background-color: #E9F5FD">
-            @yield('content')
+            <li>
+            <a href="https://www.facebook.com/pinaki.bhowmick.92/">Facebook</a>
+            </li>
+            <li>
+            <a href="https://twitter.com/bhowmick_pinaki">Twitter</a>
+            </li>
+            <li>
+            <a href="/">bhowmickpinaki123@gmail.com</a>
+            </li>
+            <li>
+            <a href="/">www.pinakibhowmick.in</a>
+            </li>
+            <!--<p style="margin-left: 200">.......................................................</p>!-->
           </div>
         </div>
       </div>
     </div>
+
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <p>Copyright © 2020 | <a href="/">Blog</a></p>

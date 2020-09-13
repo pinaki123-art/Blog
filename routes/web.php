@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PostController@index');
 Route::get('/home', ['as' => 'home', 'uses' => 'PostController@index']);
+Route::get('admin/Contact', 'UserController@showContactForm')->name('admin.Contact');
 
 //authentication
 // Route::resource('auth', 'Auth\AuthController');

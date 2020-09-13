@@ -14,7 +14,7 @@ class UserController extends Controller
 {
   /*
 	 * Display the posts of a particular user
-	 * 
+	 *
 	 * @param int $id
 	 * @return Response
 	 */
@@ -27,7 +27,7 @@ class UserController extends Controller
 
   /*
 	 * Display the posts of a particular user
-	 * 
+	 *
 	 * @param int $id
 	 * @return Response
 	 */
@@ -79,4 +79,10 @@ class UserController extends Controller
     $data['latest_comments'] = $data['user']->comments->take(5);
     return view('admin.profile', $data);
   }
+
+    public function showContactForm()
+    {
+        return view('admin.Contact');
+    }
+  
 }
